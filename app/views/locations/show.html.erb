@@ -1,0 +1,7 @@
+<%@location.cohorts.each do |cohort| %>
+<h1><%=cohort.start_date%></h1>
+<ul><%cohort.users.each do |user| %>
+<li><%=link_to user.name, user_path(user) %></li>
+<%end%>
+</ul>
+<%end%>
