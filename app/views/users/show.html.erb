@@ -12,8 +12,9 @@
 <%=f.submit %>
 <%end%>
 This is your message: 
-
+<ul>
 <%@user.messages.each do |m| %>
-<%=m.content%>
+<li><%=m.content%></li>
 <%end%>
+</ul>
  

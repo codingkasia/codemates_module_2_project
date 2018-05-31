@@ -5,5 +5,10 @@
     <%= f.password_field :password %>
     <%= f.label :password_confirmation %>
     <%= f.password_field :password_confirmation %>
+    <%=f.label :cohort_id %>
+    <%=f.text_field :cohort_id%>
+    <%=f.text_field :location %>
+    <%# <%=f.select :location, [['NYC', 1], ['DC', 2], ['Austin', 3]]%>
+    <%=f.select :cohort, [['spring', 1], ['summer', 2], ['fall', 3], ['winter', 4]]%>
     <%= f.submit %>
 <% end %>
