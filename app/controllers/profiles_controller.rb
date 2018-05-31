@@ -13,6 +13,8 @@ class ProfilesController < ApplicationController
 
     def show
         @profile = Profile.find(params[:id])
+        @message = Message.new
+
     end
 
     def edit

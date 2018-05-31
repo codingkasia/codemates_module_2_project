@@ -1,4 +1,15 @@
 Username: <%=@profile.user.username%><br />
 Gender: <%=@profile.gender%><br />
 Price: <%=@profile.price%><br />
+<%if @profile.user == current_user %>
 <%=link_to 'Edit', edit_profile_path %>
+<%end%>
+
+<%=form_for @message do |f|%>
+
+
+<%=f.label :content%>
+<%=f.text_field :content%>
+
+<%=f.submit %>
+<%end%>

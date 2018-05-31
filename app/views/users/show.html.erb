@@ -1,5 +1,13 @@
 <%# <%= gravatar_for @user %>
-<%=@user.name%>
 
+<%=@user.username%>
+<%if @user == current_user %>
+<%=link_to "create profile", new_profile_path %>
+<%end%>
 
+<%=form_for @message do |f|%>
+<%=f.label :content%>
+<%=f.text_field :content%>
+<%=f.submit %>
+<%end%>
  

@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   resources :locations, only: [:index, :show]
   resources :cohorts, only: [:show]
   resources :users, only: [:index, :show, :new, :create]
+  resources :messages, only: [:new, :create, :show]
 end
