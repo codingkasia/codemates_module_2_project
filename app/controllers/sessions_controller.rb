@@ -3,22 +3,21 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by(name: params[:user][:name])
-
-    user = user.try(:authenticate, params[:user][:password])
-
-    return redirect_to(controller: 'sessions', action: 'new') unless user
-
-    session[:user_id] = user.id
-
-    @user = user
-
-    redirect_to controller: 'welcome', action: 'home'
+    @user = User.find_by(username: params['username'].downcase)
+    # user exists
+    if @user && @user.authenticate(params["password"])
+        session[:user_id] = @user.id
+        redirect_to @user
+    # user doesn't
+    else
+        flash[:message] = 'Invalid email/password combination'
+        render :new
+    end
   end
 
   def destroy
-    session.delete :user_id
-
-    redirect_to '/'
+    session.clear
+    redirect_to users_path
   end
 end
+
