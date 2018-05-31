@@ -5,18 +5,20 @@ class MessagesController < ApplicationController
 
     def create
         @message = Message.new(message_params)
-        @message.user_id = current_user
+        @message.sender = current_user
+        
     
         @message.save
-        redirect_to @message
+        
+        redirect_to @message.receiver
     end
 
     def show
-        @message = Message.find(params[:id])
+        @message = Message.find(@message.receiver)
     end
     private
 
     def message_params
-        params.require(:message).permit(:user_id, :content) 
+        params.require(:message).permit(:sender_id, :receiver_id, :content) 
     end
 end
