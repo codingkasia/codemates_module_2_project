@@ -1,5 +1,4 @@
-<h1>hellos</h1>
-<%=@profile.gender%>
-<%=@profile.price%>
-
-username <%=@profile.user.username%>
+Username: <%=@profile.user.username%><br />
+Gender: <%=@profile.gender%><br />
+Price: <%=@profile.price%><br />
+<%=link_to 'Edit', edit_profile_path %>

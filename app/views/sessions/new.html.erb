@@ -1,5 +1,3 @@
-<h1>Hi there!Thanks for coming back!</h1>
-
 <% if current_user %>
     <h4>Welcome <%= current_user.username %></h4>
 <% else %>
@@ -14,4 +12,4 @@
     <%= submit_tag "Log in"%>
 <% end %>
 
-<%= link_to "Create new user", new_user_path %>
+
