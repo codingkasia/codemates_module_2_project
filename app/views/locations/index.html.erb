@@ -1,3 +1,24 @@
-<%@locations.each do |location| %>
-<%=link_to location.city, location_path(location.id)%>
-<%end%>
+<div class="container">
+ <div class="jumbotron jumbotron-image">
+  <div class="img"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+              <h2 style="color: black">Welcome to Codemates! </h2>
+                  <p style="color:black; font-size: 2em;">
+                    Place where awesome coders find equally awesome roomates!  
+                
+
+                    <div class="row text-left" style="display:flex; flex-wrap: wrap;">
+                        <% @locations.each do |location|  %>
+                            <div class="col-md-4 col-sm-6">
+                                <p class="btn btn-success btn-lg"><%=link_to location.city, location_path(location.id)%></p>
+                            </div>
+                        <% end %>
+                    </div>
+            </div>
+        </div>
+    </div>
+  </div>
+    <p class="btn btn-success btn-lg"><%=link_to "Fill Out Roomate Form", new_profile_path %></p>
+</div>

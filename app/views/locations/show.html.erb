@@ -1,11 +1,66 @@
-<%@location.cohorts.each do |cohort| %>
-<h1>Cohort semester: <%=cohort.semester%></h1>
-<ul>Students: <br />
-<ul><%cohort.users.each do |user| %>
-<li><%=link_to user.username, user_path(user) %></li>
-<%end%>
-</ul>
-<%end%>
-<%=link_to "I look for a roomate", new_profile_path %>
+<div class="container">
+ <div class="jumbotron jumbotron-image">
+  <div class="img"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+              
+                  
+                    <div class="row text-left" style="display:flex; flex-wrap: wrap;">
+                        <%@location.cohorts.each do |cohort| %>
+                            <h2><%=cohort.location.city%> Cohort! Semester: <%=cohort.semester%></h2>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                
+                        <div class="row text-left" style="display:flex; flex-wrap: wrap;">
+
+                                <ul><h3>Students: </h3><br />
+                                <ul><%cohort.users.each do |user| %>
+                                <li><%=link_to user.username, user_path(user) %></li>
+                                <%end%>
+                                </ul>
+                                <%end%>
+
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="container">
+    <div class="col-md-3"></div>
+    <div class="col-md-6 col-sm-6">
+        <div class="row">
+            <div class="thumbnail">
+                <img class="img-responsive" src="https://images.unsplash.com/photo-1492551557933-34265f7af79e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5f9e7b01025c2911f850db34fae63a8a&auto=format&fit=crop&w=3150&q=80">
+                    <div class="caption-full">
+                    
+                    </div>
+            </div>
+                <div class="well">
+                    <h3>Messages</h3>
+                            <%=form_for @message do |f|%>
+                                <%=f.hidden_field :receiver_id, :value => params[:id]%>
+                                <p>Post on my message board <%=f.submit %></p>
+                            <%end%>
+                    </div>        
+                </div>         
+            </div>
+        </div>
+    <div class="col-md-3"></div>
+</div>
+
+
+
+
+
+
 
     
