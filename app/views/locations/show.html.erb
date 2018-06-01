@@ -34,33 +34,10 @@
 
 </div>
 
-<div class="container">
-    <div class="col-md-3"></div>
-    <div class="col-md-6 col-sm-6">
-        <div class="row">
-            <div class="thumbnail">
-                <img class="img-responsive" src="https://images.unsplash.com/photo-1492551557933-34265f7af79e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5f9e7b01025c2911f850db34fae63a8a&auto=format&fit=crop&w=3150&q=80">
-                    <div class="caption-full">
-                    
-                    </div>
-            </div>
-                <div class="well">
-                    <h3>Messages</h3>
-                            <%=form_for @message do |f|%>
-                                <%=f.hidden_field :receiver_id, :value => params[:id]%>
-                                <p>Post on my message board <%=f.submit %></p>
-                            <%end%>
-                    </div>        
-                </div>         
-            </div>
-        </div>
-    <div class="col-md-3"></div>
-</div>
 
 
 
 
-
-
+<%=link_to "view comments wall", cohort_path(@location)%>
 
     

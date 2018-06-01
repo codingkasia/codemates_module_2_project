@@ -1,3 +1,42 @@
-<%@cohorts.each do |cohort| %>
-<%=cohort.start_date%>
-<%end%>
+
+
+
+
+<div class="container">
+    <div class="col-md-3"></div>
+    <div class="col-md-6 col-sm-6">
+        <div class="row">
+            <div class="thumbnail">
+                <img class="img-responsive" src="https://images.unsplash.com/photo-1492551557933-34265f7af79e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5f9e7b01025c2911f850db34fae63a8a&auto=format&fit=crop&w=3150&q=80">
+                    <div class="caption-full">
+                    
+                    </div>
+            </div>
+                <div class="well">
+                    <h3>Comments</h3>
+
+                    </div>
+
+                            <%=form_for @comment do |f|%>
+                            <%=f.text_field :content%>
+                                <%=f.hidden_field :recipient_id, :value => params[:id]%>
+                                <p>Post on cohort's message board <%=f.submit %></p>
+                            <%end%>
+                            <h3>Comments!</h3>
+                            <%@cohort.users.each do |user| 
+                            user.comments.each do |comment| %>
+
+                                <div class = "well">
+                                <p>You are posting a new comment as <strong><%= current_user.username %></strong><br />
+                                <%=comment.created_at%><br />
+                                <%=comment.content%> 
+                                </div>
+                                <%end%>
+                            <%end%>    
+                    </div>        
+                </div>         
+            </div>
+        </div>
+    <div class="col-md-3"></div>
+</div>
+
