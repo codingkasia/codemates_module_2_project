@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 2018_05_30_183033) do
   end
 
   create_table "profiles", force: :cascade do |t|
+    t.boolean "roomate"
     t.integer "user_id"
     t.string "gender"
     t.boolean "share_room"

@@ -11,6 +11,7 @@ class ProfilesController < ApplicationController
 
         
         @profile.save 
+        # update_roomate_status
     
 
         redirect_to profile_path(@profile)
@@ -37,7 +38,7 @@ class ProfilesController < ApplicationController
     private 
 
     def profile_params
-        params.require(:profile).permit(:user_id, :gender, :share_room, :price, :walking_distance)
+        params.require(:profile).permit(:user_id, :gender, :share_room, :price, :walking_distance, :roomate)
     end
  
 end

@@ -11,7 +11,7 @@
      <%= f.collection_select :location_id, Location.all, :id, :city, {prompt: true} %>
      <%=f.label :cohort %>
      <%= f.collection_select :cohort_id, Cohort.all, :id, :semester, {prompt: true} %>
-     <%=f.hidden_field :roomate, :value => false %>
      
+     <%=f.hidden_field :roomate, :value => false %>
     <%= f.submit %>
 <% end %>
