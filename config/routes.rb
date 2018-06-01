@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
-
+  get 'users/show_match'
   #post a message on a user's board
 
   get "/profiles/:id/comments/new", to: 'profiles#new'

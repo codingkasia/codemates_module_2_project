@@ -1,6 +1,8 @@
 class CreateProfiles < ActiveRecord::Migration[5.2]
   def change
     create_table :profiles do |t|
+      t.string :gender_preferences
+      t.text :hobby
       t.boolean :roomate
       t.integer :user_id
       t.string :gender
@@ -8,7 +10,6 @@ class CreateProfiles < ActiveRecord::Migration[5.2]
       t.boolean :share_bathroom
       t.integer :price
       t.boolean :walking_distance
-
 
       t.timestamps
     end

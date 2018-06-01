@@ -1,0 +1,7 @@
+
+
+
+Here are the people who match your criterias:
+<% find_match.each do |profile |%>
+    <%= link_to profile.username, user_path(profile) %>
+<% end %>

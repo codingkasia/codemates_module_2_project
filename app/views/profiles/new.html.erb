@@ -5,6 +5,8 @@
 <%=f.number_field :price%>
 <%=f.label :gender %>
 <%=f.select :gender, ['female', 'male', 'either']%>
+<%=f.label :gender_preferences %>
+<%=f.select :gender_preferences, ['female', 'male', 'either']%>
 <%=f.hidden_field :roomate, :value => true %>
 
 <%=f.submit %>

@@ -44,6 +44,8 @@ ActiveRecord::Schema.define(version: 2018_05_30_183033) do
   end
 
   create_table "profiles", force: :cascade do |t|
+    t.string "gender_preferences"
+    t.text "hobby"
     t.boolean "roomate"
     t.integer "user_id"
     t.string "gender"

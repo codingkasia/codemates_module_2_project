@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
      helper_method :current_user
      helper_method :update_roomate_status
+     helper_method :find_match
     
     def current_user
         if @current_user
@@ -14,8 +15,17 @@ class ApplicationController < ActionController::Base
        @idx = @profile.user_id
        @user = User.find(@idx)
        @user.roomate = true
-       
-  
+    end
+
+    def find_match 
+        
+        # profiles = 
+        Profile.all.collect do |profile|
+            if current_user.profile.gender_preferences == (profile.gender && profile.gender_preferences)
+               profile.user
+            end
+        end
+        # return profiles
     end
 
    

@@ -34,7 +34,7 @@ class ProfilesController < ApplicationController
     private 
 
     def profile_params
-        params.require(:profile).permit(:user_id, :gender, :share_room, :price, :walking_distance, :roomate)
+        params.require(:profile).permit(:user_id, :gender, :gender_preferences, :share_room, :price, :walking_distance, :hobby, :roomate)
     end
  
 end
