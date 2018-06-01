@@ -7,11 +7,11 @@ class ProfilesController < ApplicationController
         @profile = Profile.new(profile_params)
 
         @profile.user = current_user
-        # @profile.user.roomate = true
+        
 
         
         @profile.save 
-        # update_roomate_status
+        #update_roomate_status
     
 
         redirect_to profile_path(@profile)

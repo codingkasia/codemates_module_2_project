@@ -11,10 +11,11 @@ class ApplicationController < ActionController::Base
     end
 
     def update_roomate_status
-        if @profile.roomate == true
-            @user = Profile.find(@profile.user_id)
-            @user.roomate == true
-        end
+       @idx = @profile.user_id
+       @user = User.find(@idx)
+       @user.roomate = true
+       
+  
     end
 
    
