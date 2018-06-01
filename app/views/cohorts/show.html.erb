@@ -22,7 +22,7 @@
                                 <%=f.hidden_field :recipient_id, :value => params[:id]%>
                                 <p>Post on cohort's message board <%=f.submit %></p>
                             <%end%>
-                            <h3>Comments!</h3>
+                            <h3>Comments here please!</h3>
                             <%@cohort.users.each do |user| 
                             user.comments.each do |comment| %>
 
