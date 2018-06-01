@@ -1,8 +1,12 @@
-<%# <%= gravatar_for @user %>
-
+<%# <%= gravatar_for @user%> 
+<%if @user.roomate == true %>
+<%=link_to "View my roomate criterias", profile_path(@user) %>
+<%else%>
+<%=link_to "create profile", new_profile_path %>
+<%end%>
 <%=@user.username%>
 <%if @user == current_user %>
-<%=link_to "create profile", new_profile_path %>
+<h1>I am a current user</h1>
 <%end%>
 
 <%=form_for @message do |f|%>

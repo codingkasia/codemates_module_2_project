@@ -10,13 +10,15 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-     @message = Message.new
+    @message = Message.new
   end
 
   def create
     @user = User.new()
     @user.attributes = user_params
+   
     if @user.valid?
+   
         @user.save
         session[:user_id] = @user.id
         redirect_to @user
@@ -29,6 +31,6 @@ class UsersController < ApplicationController
 
    
   def user_params
-    params.require(:user).permit(:username, :password, :password_confirmation, :email, :name)
+    params.require(:user).permit(:username, :password, :password_confirmation, :email, :name, :location_id, :cohort_id, :roomate)
   end
 end

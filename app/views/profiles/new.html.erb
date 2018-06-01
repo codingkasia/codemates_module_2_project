@@ -1,10 +1,10 @@
-
-    <%=form_for @profile do |f|%>
+ <%=form_for @profile do |f|%>
 
 
 <%=f.label :price%>
 <%=f.number_field :price%>
 <%=f.label :gender %>
-<%=f.select :gender, [['female', 1], ['male', 2], ['either', 3]]%>
+<%=f.select :gender, ['female', 'male', 'either']%>
+<%=f.hidden_field :roomate, :value => true %>
 <%=f.submit %>
 <%end%>

@@ -1,5 +1,6 @@
 class User < ApplicationRecord
     belongs_to :cohort, optional: true 
+    belongs_to :location #??
     has_many :comments
     has_many :messages, foreign_key: 'receiver_id'
     has_one :profile

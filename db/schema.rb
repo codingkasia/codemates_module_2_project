@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2018_05_30_183033) do
 
   create_table "cohorts", force: :cascade do |t|
     t.integer "location_id"
-    t.string "start_date"
+    t.string "semester"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -53,6 +53,8 @@ ActiveRecord::Schema.define(version: 2018_05_30_183033) do
   end
 
   create_table "users", force: :cascade do |t|
+    t.boolean "roomate"
+    t.integer "location_id"
     t.string "name"
     t.string "username"
     t.string "email"

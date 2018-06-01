@@ -5,8 +5,13 @@ class ProfilesController < ApplicationController
     
     def create
         @profile = Profile.new(profile_params)
+
         @profile.user = current_user
+        # @profile.user.roomate = true
+
+        
         @profile.save 
+    
 
         redirect_to profile_path(@profile)
     end
