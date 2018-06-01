@@ -1,24 +1,41 @@
 <%# <%= gravatar_for @user%> 
-<%if (@user.profile != nil) && (@user.profile.roomate == true) %>
-<%=link_to "View my roomate criterias", profile_path(@user.profile) %>
-<%else%>
-<%=link_to "create profile", new_profile_path %>
-<%end%>
-<%=@user.username%>
-<%if @user == current_user %>
-<h1>I am a current user</h1>
-<%end%>
 
-<%=form_for @message do |f|%>
-<%=f.label :content%>
-<%=f.text_field :content%>
-<%=f.hidden_field :receiver_id, :value => params[:id]%>
-<%=f.submit %>
-<%end%>
-This is your message: 
-<ul>
-<%@user.messages.each do |m| %>
-<li><%=m.content%></li>
-<%end%>
-</ul>
- 
+ <div class="container">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <div class="thumbnail">
+            <img class="img-responsive" src="https://images.unsplash.com/photo-1492551557933-34265f7af79e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5f9e7b01025c2911f850db34fae63a8a&auto=format&fit=crop&w=3150&q=80">
+            </div>
+                    <div class="form-group">
+                      <h3>  <%=@user.username%>'s message board </h3>
+                       <%if (@user.profile != nil) && (@user.profile.roomate == true) %>
+                            <%=link_to "View my roomate criterias", profile_path(@user.profile) %>
+                            <%else%>
+                            <%=link_to "create profile", new_profile_path %>
+                            <%end%>
+                        
+                            
+
+                             <h3>Messages</h3>
+
+                            <%=form_for @message do |f|%>
+                          
+                            <%=f.text_field :content%>
+                            <%=f.hidden_field :receiver_id, :value => params[:id]%>
+                            <%=f.submit %>
+                            <%end%>
+                    </div>
+                            <%@user.messages.each do |message| %>
+
+                                <div class = "well">
+                                <p>You are posting a new comment as <strong><%= current_user.username %></strong><br />
+                                <%=message.created_at%><br />
+                                <%=message.content%> 
+                                </div>
+                            <%end%>    
+                           </div>
+      
+        </div>
+    </div>
+</div>

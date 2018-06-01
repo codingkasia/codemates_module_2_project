@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -22,10 +19,9 @@
                             <li><a href="/users/new"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
                             <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                         <% else %>
-                            <h4>Welcome <%= current_user.username %></h4>
-                                <%= form_tag "/logout", method: "DELETE" do%>
-                                    <%= submit_tag "Logout"%>
-                                    <%end%>
+                           <li><a href="#">Signed In As <%= current_user.username %></a></li>
+                           <li><span class="glyphicon glyphicon-log-in"><%= form_tag "/logout", method: "DELETE" do%><%= submit_tag "Logout"%></span><%end%></li>
+                              
                         <% end %>
                                   
                 </ul>
