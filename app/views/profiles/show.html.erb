@@ -11,7 +11,9 @@
                     <%if @profile.user == current_user %>
                     <%=link_to 'Edit', edit_profile_path %>
                     <%end%>
+                     
                     </div>
+                    <p class="btn btn-success btn-lg"><%=link_to "Show my best match!", users_show_match_path %><p>
             </div>
                 <div class="well">
                     <h3>Messages</h3>

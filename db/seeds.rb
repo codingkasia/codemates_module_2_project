@@ -10,7 +10,7 @@
 #                      {name: "susan", email: "susan@yahoo.com", cohort_id: 2}, 
 #                      {name: "kasia", email: "kas@yahoo.com", cohort_id: 3}, 
 #                      {name: "lucas", email: "lucas@yahoo.com", cohort_id: 3}])
-locations = Location.create([{city: "DC"}, {city: "NYC"}, {city: "Austin"}])
+locations = Location.create([{city: "Washington, DC"}, {city: "New York City, NY"}, {city: "Austin, TX"}])
 cohorts = Cohort.create([{location_id: 1, semester: "winter"}, {location_id: 2, semester: "spring"}, {location_id:3, semester: "summer"}, {location_id:3, semester: "fall"}])
 # comments = Comment.create([{cohort_id: 1, user_id: 1, content: "I just started a bootcamp in DC!"}, {cohort_id: 2, user_id: 2, content: "I am susan from alabama"}])
 
