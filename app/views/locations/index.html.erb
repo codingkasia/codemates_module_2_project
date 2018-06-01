@@ -1,14 +1,11 @@
 <div class="container">
  <div class="jumbotron jumbotron-image">
-  <div class="img"></div>
-    <div class="container">
+ <div class="container">
         <div class="row">
             <div class="col-lg-12">
               <h2 style="color: black">Welcome to Codemates! </h2>
                   <p style="color:black; font-size: 2em;">
-                    Place where awesome coders find equally awesome roommates!  
-                
-
+                    Place where awesome coders find equally awesome roommates! Pick your location!
                     <div class="row text-left" style="display:flex; flex-wrap: wrap;">
                         <% @locations.each do |location|  %>
                             <div class="col-md-4 col-sm-6">
@@ -18,9 +15,11 @@
                     </div>
             </div>
         </div>
+        <div class="img"> <img class="img-responsive" src="https://images.unsplash.com/photo-1492551557933-34265f7af79e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5f9e7b01025c2911f850db34fae63a8a&auto=format&fit=crop&w=3150&q=80"></div>
     </div>
   </div>
-    <p class="btn btn-success btn-lg"><%=link_to "Fill Out Roomate Search Form", new_profile_path %></p>
-   
-    </p>
+
 </div>
+
+
+

@@ -1,43 +1,30 @@
 <div class="container">
- <div class="jumbotron jumbotron-image">
-  <div class="img"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-              
-                  
-                    <div class="row text-left" style="display:flex; flex-wrap: wrap;">
-                        <%@location.cohorts.each do |cohort| %>
-                            <h2><%=cohort.location.city%> Cohort! Semester: <%=cohort.semester%></h2>
-                    </div>
-            </div>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <div class="thumbnail">
+            <%@location.cohorts.each do |cohort| %>
+                            <h2><%=cohort.location.city%> Cohort! <br />Semester: <%=cohort.semester%></h2>
+            <img class="img-responsive" src="https://images.unsplash.com/photo-1492551557933-34265f7af79e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5f9e7b01025c2911f850db34fae63a8a&auto=format&fit=crop&w=3150&q=80">
+               
         </div>
-    </div>
-    <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                
-                        <div class="row text-left" style="display:flex; flex-wrap: wrap;">
-
-                                <ul><h3>Students: </h3><br />
+       <p class="btn btn-success btn-lg"><%=link_to "Fill Out Roomate Search Form", new_profile_path %></p><br />
+<ul><h3>Students: </h3><br />
+<div class = "well">
                                 <ul><%cohort.users.each do |user| %>
                                 <li><%=link_to user.username, user_path(user) %></li>
                                 <%end%>
                                 </ul>
                                 <%end%>
-
-                        </div>
-                </div>
-            </div>
+                                </div>
+       <p class="btn btn-success btn-lg"><%=link_to "Comments Wall", cohort_path(@location)%></p>
+          
+            
+        <div class="row text-left" style="display:flex; flex-wrap: wrap;">
+                        
+                    </div>
         </div>
+     
     </div>
-
 </div>
 
-
-
-
-
-<%=link_to "view comments wall", cohort_path(@location)%>
-
-    

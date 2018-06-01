@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     # user exists
     if @user && @user.authenticate(params["password"])
         session[:user_id] = @user.id
-        redirect_to users_path
+        redirect_to location_path(@user.location)
     # user doesn't
     else
         flash[:message] = "Username and password do not match"
@@ -18,6 +18,6 @@ class SessionsController < ApplicationController
   def destroy
     # session.clear
     session.delete :user_id
-    redirect_to users_path
+    redirect_to locations_path
   end
 end

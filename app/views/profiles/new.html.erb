@@ -27,8 +27,6 @@
                                         <%=f.label :hobby%>
                                         <%=f.text_field :hobby%>
                                     </div>
-                                    
-                                    
                                </div>
                                 <div class="form-group">
                                     <h4>I look for:</h4>
@@ -38,10 +36,6 @@
                                 </label>
                                 
                                 </div>
-
-
- 
-                                
                                 <div>
                                <div class="form-group">
                                        <h4>Share Room </h4> 
@@ -51,19 +45,12 @@
                                        <h4>Walking Distance From School </h4> 
                                         <%=f.select :walking_distance, ['Yes', 'No']%>
                                     </div>
-                                    
-                                    
-                               </div>
-                                
-                                
-                                
-                                
-                                                               
+                               </div>            
                                 <div class="form-group">
                                         <%=f.hidden_field :roomate, :value => true %>
 
-<%=f.submit %>
-<%end%>
+                                <%=f.submit %>
+                                <%end%>
                                 </div>
                             </form>
                         </div>
@@ -76,16 +63,3 @@
 
 
 
-<%=form_for @profile do |f|%>
-
-
-<%=f.label :price%>
-<%=f.number_field :price%>
-<%=f.label :gender %>
-<%=f.select :gender, ['female', 'male', 'either']%>
-<%=f.label :gender_preferences %>
-<%=f.select :gender_preferences, ['female', 'male', 'either']%>
-<%=f.hidden_field :roomate, :value => true %>
-
-<%=f.submit %>
-<%end%>

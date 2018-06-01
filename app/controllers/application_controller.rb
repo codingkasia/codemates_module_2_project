@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
         
         # profiles = 
         Profile.all.map do |profile|
-         byebug
+         
             if  (current_user.profile.gender_preferences == profile.gender_preferences) && (current_user.profile.gender_preferences == profile.gender_preferences)
                profile.user
             end
